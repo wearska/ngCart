@@ -147,10 +147,9 @@ angular.module('ngCart', ['ngCart.directives'])
         };
 
         this.empty = function () {
-            
-            $rootScope.$broadcast('ngCart:change', {});
             this.$cart.items = [];
             localStorage.removeItem('cart');
+            $rootScope.$broadcast('ngCart:change', {});
         };
         
         this.isEmpty = function () {
